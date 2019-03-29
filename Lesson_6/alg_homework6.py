@@ -40,6 +40,8 @@ def testFunc():
     print("№%3d:%3d" % (min1 + 1, a[min1]))
     print("№%3d:%3d" % (min2 + 1, a[min2]))
     print(sys.getrefcount(min1)) #149 ссылок на 'min1'. Видимо название переменной часто встречается во внутриних файлах.
+    
+    del min1
 
 testFunc()
 
@@ -74,6 +76,7 @@ Line #    Mem usage    Increment   Line Contents
     40     11.5 MiB      0.0 MiB       print("№%3d:%3d" % (min1 + 1, a[min1]))
     41     11.5 MiB      0.0 MiB       print("№%3d:%3d" % (min2 + 1, a[min2]))
     42     11.5 MiB      0.0 MiB       print(sys.getrefcount(min1))
+    43     11.6 MiB      0.0 MiB       del min1
 '''''
 #с рекурсией:
 import random
